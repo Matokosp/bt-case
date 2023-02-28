@@ -1,0 +1,102 @@
+@import '../../styles/utils.scss';
+
+.gallery {
+  .image {
+    grid-column: span 3;
+    margin-bottom: 24px;
+    cursor: pointer;
+    position: relative;
+    height: calc((1500px - (72px + 96px)) / 4);
+    img {
+      width: calc((1500px - (72px + 96px)) / 4);
+      transform: translate(0px, 0px);
+      z-index: 1;
+      position: relative;
+
+      &:nth-child(2) {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        visibility: hidden;
+        height: 100%;
+        &.show {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sliderWrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 100vh;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  z-index: 100;
+
+  &.openAnimation {
+    opacity: 0;
+    animation: show;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 0.4s;
+  }
+}
+
+.slider {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .nav {
+    &:hover {
+      transform: scale(1.06);
+    }
+    position: absolute;
+    width: 60px;
+    cursor: pointer;
+    transition: 0.4s;
+    &.previous {
+      left: 40px;
+    }
+    &.next {
+      right: 40px;
+      transform: rotate(180deg);
+      &:hover {
+        transform: scale(1.06) rotate(180deg);
+      }
+    }
+  }
+
+  .figureWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    figcaption {
+      margin-top: 20px;
+      text-align: center;
+      color: $light-gray;
+      text-transform: capitalize;
+    }
+  }
+}

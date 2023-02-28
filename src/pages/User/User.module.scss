@@ -1,0 +1,9 @@
+.user {
+  .albums {
+    margin-top: 80px;
+    .albumCard {
+      grid-column: span 3;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.errorWrapper {
+  display: flex;
+  justify-content: center;
+  .error {
+    background-color: rgba($color: red, $alpha: 0.3);
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: auto;
+    p {
+      color: red;
+    }
+  }
+}

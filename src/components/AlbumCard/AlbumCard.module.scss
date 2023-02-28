@@ -1,0 +1,15 @@
+@import '../../styles/utils.scss';
+
+.albumCard {
+  background-color: $blue;
+  padding: 20px 30px;
+  border-radius: 20px;
+  transition: 0.4s;
+  color: $dark-blue;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}

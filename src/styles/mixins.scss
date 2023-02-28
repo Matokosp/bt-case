@@ -1,0 +1,32 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 540px,
+  md: 720px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+$container-gutter: (
+  xs: 12px,
+  lg: 24px,
+);
+
+@mixin add_container_paddings($paddings) {
+  @each $key, $gutter in $paddings {
+    $bp: map-get($grid-breakpoints, $key);
+    @media (min-width: $bp) {
+      padding-right: calc($gutter * 2);
+      padding-left: calc($gutter * 2);
+    }
+  }
+}
+
+@mixin make_grid($gutters, $col: 12) {
+  grid-template-columns: repeat($col, 1fr);
+  @each $key, $gutter in $container-gutter {
+    $bp: map-get($grid-breakpoints, $key);
+    @media (min-width: $bp) {
+      column-gap: $gutter;
+    }
+  }
+}

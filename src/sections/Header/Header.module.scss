@@ -1,0 +1,33 @@
+@import '../../styles/utils.scss';
+
+@import '../../styles/utils.scss';
+
+.header {
+  margin-bottom: 24px;
+  grid-column: 1 / -1;
+  h2 {
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: $dark-blue;
+  }
+  &.centered {
+    h2 {
+      text-align: center;
+      font-size: 44px;
+      text-transform: capitalize;
+    }
+    > div {
+      display: flex;
+      justify-content: center;
+      column-gap: 40px;
+      font-style: italic;
+      p:nth-child(2) {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  &.section {
+    border-bottom: 1px solid $gray;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../styles/utils.scss';
+
+.container {
+  &:not(.noPadding) {
+    @include add_container_paddings($container-gutter);
+  }
+
+  &.grid {
+    display: grid;
+    grid-auto-flow: dense;
+    @include make_grid($container-gutter);
+  }
+}

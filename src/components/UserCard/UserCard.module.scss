@@ -1,0 +1,36 @@
+@import '../../styles/utils.scss';
+
+.userCard {
+  background-color: $dark-blue;
+  padding: 20px;
+  border-radius: 20px;
+  color: $light-blue;
+  transition: 0.4s;
+  position: relative;
+  p {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .favourite {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    svg {
+      width: 100%;
+      path {
+        transition: 0.2s;
+        &:hover {
+          fill: $light-blue;
+        }
+      }
+    }
+  }
+}
