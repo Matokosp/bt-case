@@ -7,6 +7,10 @@
     cursor: pointer;
     position: relative;
     height: calc((1500px - (72px + 96px)) / 4);
+    transition: 0.4s;
+    &:hover {
+      transform: scale(1.02);
+    }
     img {
       width: calc((1500px - (72px + 96px)) / 4);
       transform: translate(0px, 0px);

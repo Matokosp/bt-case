@@ -59,9 +59,11 @@ export const Gallery = ({ photos }: GalleryProps) => {
       switch (type) {
         case 'previous':
           setInScene((a) => (a - 1 < 0 ? photos.length - 1 : a - 1));
+          setIsOpening(false);
           break;
         case 'next':
           setInScene((a) => (a + 1 > photos.length - 1 ? 0 : a + 1));
+          setIsOpening(false);
           break;
       }
     }
